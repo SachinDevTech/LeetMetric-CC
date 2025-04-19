@@ -50,6 +50,24 @@ h1 {
 #search-btn {
   padding: 0.4rem;
   border-radius: 5px;
+  cursor: pointer;
+  background-color: #299f5d;
+  color: white;
+  border: none;
+  transition: background-color 0.3s;
+}
+
+#search-btn:hover {
+  background-color: #1c7a46;
+}
+
+#search-btn:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+.stats-container {
+  margin-top: 1rem;
 }
 
 .circle {
@@ -61,15 +79,20 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1 rem;
+  font-size: 1rem;
   color: white;
   font-weight: 700;
   background: conic-gradient(#299f5d var(--progress-degree, 0%), #283a2e 0%);
   flex-direction: column;
 }
+
 .circle span {
   position: relative;
   z-index: 2;
+}
+
+.circle p {
+  margin-top: 5px;
 }
 
 .progress {
@@ -101,4 +124,63 @@ h4 {
   border-radius: 10px;
   font-size: 1rem;
   min-height: 4rem;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.hidden {
+  display: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+    width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 95%;
+    padding: 15px;
+  }
+  
+  .circle {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .card {
+    width: 100%;
+  }
+  
+  .user-input-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  #user-input {
+    width: 100%;
+  }
+}
+
+/* Add this to your existing style.css */
+.error-message {
+  color: #ff6b6b;
+  background-color: rgba(255, 107, 107, 0.1);
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.stats-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
